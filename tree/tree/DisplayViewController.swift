@@ -14,7 +14,7 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     var finalName = ""
     var response = ""
-    
+    var postalCode = ""
     
     
     
@@ -88,6 +88,21 @@ class DisplayViewController: UIViewController {
                   
         }
     }
+    func lookUpCurrentLocation() {
+        // Use the last reported location.
+        if let lastLocation = self.locationManager.location {
+            let geocoder = CLGeocoder()
+            
+            // Look up the location and pass it to the completion handler
+            geocoder.reverseGeocodeLocation(lastLocation,
+            completionHandler: { (placemarks, error) in
+                if error == nil {
+                    let firstLocation = placemarks?[0] as! CLPlacemark!
+                    print(firstLocation?.postalCode)
+                }
+            })
+        }
+    }
     
     func changeResponse(s: Data){
         DispatchQueue.main.async {
@@ -116,6 +131,7 @@ class DisplayViewController: UIViewController {
             print(currentLoc.coordinate.latitude)
             print(currentLoc.coordinate.longitude)
         }
+        lookUpCurrentLocation()
         label.text = finalName
         let urlString = URL(string: "https://npin.cdc.gov/api/organization/proximity?prox[origin]=07060")
         if let url = urlString {
