@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class DisplayViewController: UIViewController {
 
@@ -96,32 +97,26 @@ class DisplayViewController: UIViewController {
             
             do {
                 let people = try decoder.decode([Person].self,from:s)
-                print(people)
+                //print(people)
                 self.json.text = people[0].field_org_city_name
             } catch {
                 print(error.localizedDescription)
             }
         }
     }
-    
+    var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        locationManager.requestWhenInUseAuthorization()
+        var currentLoc: CLLocation!
+        if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
+            CLLocationManager.authorizationStatus() == .authorizedAlways) {
+            currentLoc = locationManager.location
+            print(currentLoc.coordinate.latitude)
+            print(currentLoc.coordinate.longitude)
+        }
         label.text = finalName
-        /*let url = URL(string: "https://npin.cdc.gov/api/organization/proximity?prox[origin]=07060")
-        let session = URLSession.shared // or let session = URLSession(configuration: URLSessionConfiguration.default)
-        if let usableUrl = url {
-            let task = session.dataTask(with: usableUrl, completionHandler: { (data, response, error) in
-                if let data = data {
-                    if let stringData = String(data: data, encoding: String.Encoding.utf8) {
-                        self.response = (stringData) //JSONSerialization
-                        //print(stringData)
-                        self.changeResponse(s: stringData)
-                        
-                    }
-                }
-            })
-            task.resume()
-        }*/
         let urlString = URL(string: "https://npin.cdc.gov/api/organization/proximity?prox[origin]=07060")
         if let url = urlString {
              let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -134,8 +129,6 @@ class DisplayViewController: UIViewController {
                   }
              }
         task.resume()
-        //print(response)
-        //self.json.text = response
     }
     }
     
