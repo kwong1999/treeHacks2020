@@ -15,6 +15,8 @@ class DisplayViewController: UIViewController {
     var finalName = ""
     var response = ""
     var postalCode = ""
+    var lat :CLLocationDegrees = 0
+    var lon :CLLocationDegrees = 0
     
     
     
@@ -89,18 +91,23 @@ class DisplayViewController: UIViewController {
         }
     }
     func lookUpCurrentLocation() {
+        var temp = ""
         // Use the last reported location.
-        if let lastLocation = self.locationManager.location {
-            let geocoder = CLGeocoder()
-            
-            // Look up the location and pass it to the completion handler
-            geocoder.reverseGeocodeLocation(lastLocation,
-            completionHandler: { (placemarks, error) in
-                if error == nil {
-                    let firstLocation = placemarks?[0] as! CLPlacemark!
-                    print(firstLocation?.postalCode)
-                }
-            })
+           DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
+            if let lastLocation = self.locationManager.location {
+                let geocoder = CLGeocoder()
+                
+                geocoder.reverseGeocodeLocation(lastLocation,
+                completionHandler: { (placemarks, error) in
+                    if error == nil {
+                        let firstLocation = placemarks?[0] as! CLPlacemark!
+                        self.postalCode = firstLocation?.postalCode as! String
+                    }
+                    temp = self.postalCode
+                    print(temp)
+                })
+            }
+            print("FUCK")
         }
     }
     
@@ -128,12 +135,17 @@ class DisplayViewController: UIViewController {
         if(CLLocationManager.authorizationStatus() == .authorizedWhenInUse ||
             CLLocationManager.authorizationStatus() == .authorizedAlways) {
             currentLoc = locationManager.location
-            print(currentLoc.coordinate.latitude)
-            print(currentLoc.coordinate.longitude)
+           lat = currentLoc.coordinate.latitude
+           lon = currentLoc.coordinate.longitude
         }
+        
+        
+        
         lookUpCurrentLocation()
         label.text = finalName
-        let urlString = URL(string: "https://npin.cdc.gov/api/organization/proximity?prox[origin]=07060")
+        let startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)"
+        print(startUrl)
+        let urlString = URL(string: startUrl)
         if let url = urlString {
              let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
              if error != nil {
