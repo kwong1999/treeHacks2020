@@ -37,6 +37,10 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! DisplayViewController
+        if(self.option == "")
+        {
+            self.option = "Acute HIV Testing"
+        }
         vc.finalName = self.option
     }
     

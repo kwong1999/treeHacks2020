@@ -12,11 +12,26 @@ class DisplayViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
     var finalName = ""
+    var response = ""
+    @IBOutlet weak var json: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = finalName
-
-        // Do any additional setup after loading the view.
+        let url = URL(string: "https://npin.cdc.gov/api/organization/proximity?prox[origin]=07060")
+        let session = URLSession.shared // or let session = URLSession(configuration: URLSessionConfiguration.default)
+        if let usableUrl = url {
+            let task = session.dataTask(with: usableUrl, completionHandler: { (data, response, error) in
+                if let data = data {
+                    if let stringData = String(data: data, encoding: String.Encoding.utf8) {
+                        self.response = (stringData) //JSONSerialization
+                        //print(stringData)
+                    }
+                }
+            })
+            task.resume()
+        }
+        print(response)
+        self.json.text = response
     }
     
 
