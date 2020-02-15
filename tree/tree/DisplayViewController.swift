@@ -36,7 +36,7 @@ class DisplayViewController: UIViewController {
         var field_org_country : String
         var field_org_phone : String
         var field_org_lat_long : String
-        var  field_org_distance : String
+        var field_org_distance : String
         var field_org_last_updated : String
         
         var field_org_svc_testing : String
@@ -52,7 +52,7 @@ class DisplayViewController: UIViewController {
         var field_organization_eligibilty : String
         var field_org_fee : String
         var last_updated : String
-        var  field_org_type : String
+        var field_org_type : String
         var field_org_websites : String
         init()
         {
@@ -91,9 +91,7 @@ class DisplayViewController: UIViewController {
         }
     }
     func lookUpCurrentLocation() {
-        var temp = ""
         // Use the last reported location.
-           DispatchQueue.main.asyncAfter(deadline: .now() + 4.0) {
             if let lastLocation = self.locationManager.location {
                 let geocoder = CLGeocoder()
                 
@@ -103,12 +101,8 @@ class DisplayViewController: UIViewController {
                         let firstLocation = placemarks?[0] as! CLPlacemark!
                         self.postalCode = firstLocation?.postalCode as! String
                     }
-                    temp = self.postalCode
-                    print(temp)
                 })
             }
-            print("FUCK")
-        }
     }
     
     func changeResponse(s: Data){
@@ -143,20 +137,28 @@ class DisplayViewController: UIViewController {
         
         lookUpCurrentLocation()
         label.text = finalName
-        let startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)"
-        print(startUrl)
-        let urlString = URL(string: startUrl)
-        if let url = urlString {
-             let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-             if error != nil {
-                  print(error)
-             } else {
-                  if let usableData = data {
-                       self.changeResponse(s: usableData) //JSONSerialization
-                       }
-                  }
-             }
-        task.resume()
+        var startUrl = ""
+        DispatchQueue.main.asyncAfter(deadline: .now()+0.5) { //this may be too slow
+           // Code you want to be delayed
+            startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)"
+            print(startUrl)
+            
+            
+            
+            let urlString = URL(string: startUrl)
+            if let url = urlString {
+                 let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
+                 if error != nil {
+                      print(error)
+                 } else {
+                      if let usableData = data {
+                           self.changeResponse(s: usableData) //JSONSerialization
+                           }
+                      }
+                 }
+            task.resume()
+        }
+        
     }
     }
     
