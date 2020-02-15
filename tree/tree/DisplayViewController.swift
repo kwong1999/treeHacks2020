@@ -24,6 +24,9 @@ class DisplayViewController: UIViewController {
     
     @IBOutlet weak var info: UILabel!
     
+    @IBOutlet weak var services: UILabel!
+    
+    @IBOutlet weak var clinic: UILabel!
     struct Person: Codable {
         var field_org_nid: String
         var field_org_id : String
@@ -117,6 +120,8 @@ class DisplayViewController: UIViewController {
                 let people = try decoder.decode([Person].self,from:s)
                 //print(people)
                 self.json.text = people[0].field_org_city_name
+                self.services.text = people[0].field_org_svc_testing
+                self.clinic.text = people[0].title_field
             } catch {
                 print(error.localizedDescription)
             }
@@ -140,13 +145,6 @@ class DisplayViewController: UIViewController {
         lookUpCurrentLocation()
         label.text = finalName
         
-        /*if finalName == "Acute HIV Testing" {
-            print("fuck ya")
-        }
-        else {
-            print("fuck no")
-        }*/
-        
         var startUrl = ""
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) { //this may be too slow
            // Code you want to be delayed
@@ -155,6 +153,7 @@ class DisplayViewController: UIViewController {
             
             if self.finalName == "Acute HIV Testing" {
                 self.info.text = "This is the earliest stage of human immunodeficiency virus (HIV), the virus that causes AIDS and attacks immune cells. Early treatment will help make treatment more effective and reduce the risk of infecting others."
+                //NEEDS A URL ADDITION
             }
             else if self.finalName == "Chlamydia Testing" {
                 self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated."
@@ -166,6 +165,7 @@ class DisplayViewController: UIViewController {
             }
             else if self.finalName == "Conventional Oral HIV Testing" {
                 self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
+                //NEEDS A URL ADDITION
             }
             else if self.finalName == "Gonorrhea Testing" {
                 self.info.text = "Gonorrhea is a sexually transmitted disease that most commonly affects young men and women between the ages 15-24. It can be spread through unprotected vaginal, anal, or oral sex."
@@ -185,6 +185,7 @@ class DisplayViewController: UIViewController {
             }
             else if self.finalName == "Hepatitis Testing"{
                 self.info.text = "Hepatitis is inflammation of the liver. There are three different types–Hepatitis A, Hepatitis B, and Hepatitis, which differ in how they are transmitted and vary in severity and duration."
+                //NEEDS A URL ADDITION
             }
             else if self.finalName == "Herpes Testing" {
                 self.info.text = "There are two types of herpes–genital herpes and oral herpes. They can result in cold sores and blisters around the genital area and the mouth, respectively. Most people with herpes exhibit no symptoms or only very mild symptoms."
@@ -192,6 +193,7 @@ class DisplayViewController: UIViewController {
             }
             else if self.finalName == "HIV Testing" {
                 self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
+                //NEEDS A URL ADDITION
             }
             else if self.finalName == "Rapid Blood HIV Testing"{
                 self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
