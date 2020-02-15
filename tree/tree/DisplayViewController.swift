@@ -13,7 +13,20 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var label: UILabel!
     var finalName = ""
     var response = ""
+    
+    
+    
+    
     @IBOutlet weak var json: UILabel!
+    
+    func changeResponse(s: String){
+        self.response = s
+        print(self.response)
+        DispatchQueue.main.async {
+            self.json.text = self.response
+        }
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         label.text = finalName
@@ -25,12 +38,14 @@ class DisplayViewController: UIViewController {
                     if let stringData = String(data: data, encoding: String.Encoding.utf8) {
                         self.response = (stringData) //JSONSerialization
                         //print(stringData)
+                        self.changeResponse(s: stringData)
+                        
                     }
                 }
             })
             task.resume()
         }
-        print(response)
+        //print(response)
         self.json.text = response
     }
     
