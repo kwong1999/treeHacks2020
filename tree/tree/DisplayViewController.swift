@@ -24,6 +24,11 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var box2: UIView!
     @IBOutlet weak var box3: UIView!
     
+    @IBOutlet weak var label1: UILabel!
+    @IBOutlet weak var label2: UILabel!
+    @IBOutlet weak var label3: UILabel!
+    
+    
     @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var json: UILabel!

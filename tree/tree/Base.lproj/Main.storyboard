@@ -275,16 +275,43 @@
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wXe-oh-sVG">
                                         <rect key="frame" x="107" y="510" width="138" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-oa-Pzx">
+                                                <rect key="frame" x="48" y="45" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.45419931419999998" green="0.1848250887" blue="0.8085702213" alpha="0.42620933220000001" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K6b-zt-qBG">
                                         <rect key="frame" x="28" y="629" width="138" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-x9-OtR">
+                                                <rect key="frame" x="48" y="45" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.45419931419999998" green="0.1848250887" blue="0.8085702213" alpha="0.42620933220000001" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dAc-SF-7ez">
                                         <rect key="frame" x="174" y="629" width="138" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5p-gz-xGA">
+                                                <rect key="frame" x="48" y="45" width="42" height="21"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
                                         <color key="backgroundColor" red="0.45419931419999998" green="0.1848250887" blue="0.8085702213" alpha="0.42620933220000001" colorSpace="custom" customColorSpace="displayP3"/>
                                     </view>
                                 </subviews>
@@ -302,6 +329,9 @@
                         <outlet property="box3" destination="dAc-SF-7ez" id="cKQ-va-dot"/>
                         <outlet property="info" destination="ZY4-wH-Id4" id="Iw1-s6-iFI"/>
                         <outlet property="label" destination="SMz-Ds-cPG" id="aOb-sX-SKG"/>
+                        <outlet property="label1" destination="Dj1-oa-Pzx" id="Spg-ol-fNm"/>
+                        <outlet property="label2" destination="mnk-x9-OtR" id="xZ0-bz-pQx"/>
+                        <outlet property="label3" destination="d5p-gz-xGA" id="Ztp-Hp-PBb"/>
                         <outlet property="map" destination="Ro7-pL-W6g" id="URY-hJ-vgG"/>
                     </connections>
                 </viewController>
