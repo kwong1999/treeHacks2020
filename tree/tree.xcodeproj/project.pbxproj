@@ -38,7 +38,7 @@
 /* Begin PBXFileReference section */
 		4043EF9F23F7FA5B006E65D8 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		4043EFA123F8015E006E65D8 /* DisplayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayViewController.swift; sourceTree = "<group>"; };
-		C34CC8F323F7F1A100766461 /* tree.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = tree.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34CC8F323F7F1A100766461 /* Equitas.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Equitas.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C34CC8F623F7F1A100766461 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C34CC8F823F7F1A100766461 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C34CC8FB23F7F1A100766461 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -91,7 +91,7 @@
 		C34CC8F423F7F1A100766461 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				C34CC8F323F7F1A100766461 /* tree.app */,
+				C34CC8F323F7F1A100766461 /* Equitas.app */,
 				C34CC90723F7F1A100766461 /* treeTests.xctest */,
 				C34CC91223F7F1A100766461 /* treeUITests.xctest */,
 			);
@@ -148,7 +148,7 @@
 			);
 			name = tree;
 			productName = tree;
-			productReference = C34CC8F323F7F1A100766461 /* tree.app */;
+			productReference = C34CC8F323F7F1A100766461 /* Equitas.app */;
 			productType = "com.apple.product-type.application";
 		};
 		C34CC90623F7F1A100766461 /* treeTests */ = {
@@ -447,7 +447,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = murake.tree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Equitas;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,7 +464,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = murake.tree;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Equitas;
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
