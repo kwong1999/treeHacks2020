@@ -139,7 +139,7 @@ class DisplayViewController: UIViewController {
                     }
                 distance = distance.sorted(by: {$0.0 < $1.0})
                 for dist in distance{
-                    if(providers[dist.name].field_org_fee.contains("Free"))
+                    if(providers[dist.name].field_org_fee.contains("Free") || providers[dist.name].field_org_fee.contains("Medicaid"))
                     {
                         arrayChoice.append(providers[dist.name])
                         distChoice.append(dist.value/1609.0)
