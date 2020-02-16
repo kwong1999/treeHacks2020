@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreLocation
+import MapKit
 
 class DisplayViewController: UIViewController {
 
@@ -96,6 +97,14 @@ class DisplayViewController: UIViewController {
                   
         }
     }
+    let regionRadius: CLLocationDistance = 1000
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
+                                                       latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        map.setRegion(coordinateRegion, animated: true)
+    }
+    
+    
     func lookUpCurrentLocation() {
         // Use the last reported location.
             if let lastLocation = self.locationManager.location {
@@ -144,7 +153,7 @@ class DisplayViewController: UIViewController {
                     {
                         arrayChoice.append(providers[dist.name])
                         distChoice.append(dist.value/1609.0)
-                        print(dist.value/1609.0)
+                        //print(dist.value/1609.0)
                     }
                 }
                 
@@ -170,8 +179,10 @@ class DisplayViewController: UIViewController {
             currentLoc = locationManager.location
            lat = currentLoc.coordinate.latitude
            lon = currentLoc.coordinate.longitude
+            print(lat)
+            print(lon)
         }
-        
+        centerMapOnLocation(location: currentLoc)
         
         
         lookUpCurrentLocation()
@@ -231,7 +242,7 @@ class DisplayViewController: UIViewController {
                 startUrl += "TB%20Testing"
             }
             
-            print(startUrl)
+           // print(startUrl)
             
             let urlString = URL(string: startUrl)
             if let url = urlString {
