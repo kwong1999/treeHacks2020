@@ -201,7 +201,7 @@ class DisplayViewController: UIViewController {
                             let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
                             let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
                             
-                            let normalText = "\nDistance: \(d)\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalText = "\nDistance: \(d) miles\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
                             let normalString = NSMutableAttributedString(string:normalText)
                             
                             attributedString.append(normalString)
@@ -220,7 +220,7 @@ class DisplayViewController: UIViewController {
                             let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
                             let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
                             
-                            let normalText = "\nDistance: \(d)\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalText = "\nDistance: \(d) miles\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
                             let normalString = NSMutableAttributedString(string:normalText)
                             
                             attributedString.append(normalString)
@@ -239,7 +239,7 @@ class DisplayViewController: UIViewController {
                             let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
                             let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
                             
-                            let normalText = "\nDistance: \(d)\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalText = "\nDistance: \(d) miles\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
                             let normalString = NSMutableAttributedString(string:normalText)
                             
                             attributedString.append(normalString)
