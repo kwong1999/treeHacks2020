@@ -196,7 +196,17 @@ class DisplayViewController: UIViewController {
                             let phone = providers[dist.name].field_org_phone[index...]
                             let ind2 = phone.index(phone.startIndex, offsetBy: 15)
                             let phone2 = phone[..<ind2]
-                            self.label1.text = "\(providers[dist.name].title_field)\nDistance: \(d)\nPhone:\(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            
+                            let boldText = "\(providers[dist.name].title_field)"
+                            let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
+                            let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
+                            
+                            let normalText = "\nDistance: \(d)\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalString = NSMutableAttributedString(string:normalText)
+                            
+                            attributedString.append(normalString)
+                            self.label1.attributedText = attributedString
+                            
                             labelCount = 2
                         }
                         else if(labelCount == 2)
@@ -205,7 +215,17 @@ class DisplayViewController: UIViewController {
                             let phone = providers[dist.name].field_org_phone[index...]
                             let ind2 = phone.index(phone.startIndex, offsetBy: 15)
                             let phone2 = phone[..<ind2]
-                            self.label2.text = "\(providers[dist.name].title_field)\nDistance: \(d) miles\nPhone:\(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            
+                            let boldText = "\(providers[dist.name].title_field)"
+                            let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
+                            let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
+                            
+                            let normalText = "\nDistance: \(d)\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalString = NSMutableAttributedString(string:normalText)
+                            
+                            attributedString.append(normalString)
+                            self.label2.attributedText = attributedString
+                            
                             labelCount = 3
                         }
                         else if(labelCount == 3)
@@ -214,7 +234,17 @@ class DisplayViewController: UIViewController {
                             let phone = providers[dist.name].field_org_phone[index...]
                             let ind2 = phone.index(phone.startIndex, offsetBy: 15)
                             let phone2 = phone[..<ind2]
-                            self.label3.text = "\(providers[dist.name].title_field)\nDistance: \(d)\nPhone:\(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            
+                            let boldText = "\(providers[dist.name].title_field)"
+                            let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
+                            let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
+                            
+                            let normalText = "\nDistance: \(d)\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalString = NSMutableAttributedString(string:normalText)
+                            
+                            attributedString.append(normalString)
+                            self.label3.attributedText = attributedString
+                            
                             labelCount = 4
                             break
                         }
