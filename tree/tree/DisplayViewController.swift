@@ -106,7 +106,7 @@ class DisplayViewController: UIViewController {
                   
         }
     }
-    let regionRadius: CLLocationDistance = 50000
+    let regionRadius: CLLocationDistance = 100000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
                                                        latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
@@ -178,18 +178,66 @@ class DisplayViewController: UIViewController {
                     }
                 distance = distance.sorted(by: {$0.0 < $1.0})
                 var i = 0
+                var labelCount = 1
                 for dist in distance{
                     if(providers[dist.name].field_org_fee.contains("Free") || providers[dist.name].field_org_fee.contains("Medicaid"))
                     {
                         arrayChoice.append(providers[dist.name])
                         distChoice.append(dist.value/1609.0)
+                        let d = Double(round(1000*(dist.value/1609.0))/1000)
+                        
                         //print(dist.value/1609.0)
                         let annotation = MKPointAnnotation()
                         annotation.coordinate = CLLocationCoordinate2D(latitude: lats[i].value, longitude: lons[i].value)
                         self.map.addAnnotation(annotation)
+                        if(labelCount == 1)
+                        {
+                            let index = providers[dist.name].field_org_phone.index(providers[dist.name].field_org_phone.startIndex, offsetBy: 7)
+                            let phone = providers[dist.name].field_org_phone[index...]
+                            let ind2 = phone.index(phone.startIndex, offsetBy: 15)
+                            let phone2 = phone[..<ind2]
+                            self.label1.text = "\(providers[dist.name].title_field)\nDistance: \(d)\nPhone:\(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            labelCount = 2
+                        }
+                        else if(labelCount == 2)
+                        {
+                            let index = providers[dist.name].field_org_phone.index(providers[dist.name].field_org_phone.startIndex, offsetBy: 7)
+                            let phone = providers[dist.name].field_org_phone[index...]
+                            let ind2 = phone.index(phone.startIndex, offsetBy: 15)
+                            let phone2 = phone[..<ind2]
+                            self.label2.text = "\(providers[dist.name].title_field)\nDistance: \(d) miles\nPhone:\(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            labelCount = 3
+                        }
+                        else if(labelCount == 3)
+                        {
+                            let index = providers[dist.name].field_org_phone.index(providers[dist.name].field_org_phone.startIndex, offsetBy: 7)
+                            let phone = providers[dist.name].field_org_phone[index...]
+                            let ind2 = phone.index(phone.startIndex, offsetBy: 15)
+                            let phone2 = phone[..<ind2]
+                            self.label3.text = "\(providers[dist.name].title_field)\nDistance: \(d)\nPhone:\(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            labelCount = 4
+                            break
+                        }
+                        
                     }
                     i = i + 1
                 }
+                    if(labelCount == 1)
+                    {
+                        self.label1.text = "Sorry, there are no testing centers in your area."
+                        self.box2.isHidden = true;
+                        self.box3.isHidden = true;
+                    }
+                    else if(labelCount == 2)
+                    {
+                        self.box2.isHidden = true;
+                        self.box3.isHidden = true;
+                    }
+                    else if(labelCount == 3)
+                    {
+                        self.box3.isHidden = true;
+                    }
+
                 }
                 
                 
@@ -226,7 +274,7 @@ class DisplayViewController: UIViewController {
         var startUrl = ""
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) { //this may be too slow
            // Code you want to be delayed
-            startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)&svc_testing="
+            startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)&prox[distance]=10000&svc_testing="
             //print(startUrl)
             
             if self.finalName == "Chlamydia Testing" {
