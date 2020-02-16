@@ -158,6 +158,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </tableView>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="Ro7-pL-W6g">
+                                <rect key="frame" x="119" y="208" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="1KW-6c-kAh"/>
@@ -168,6 +172,7 @@
                         <outlet property="info" destination="ZY4-wH-Id4" id="Iw1-s6-iFI"/>
                         <outlet property="json" destination="klZ-6c-xES" id="3Dc-a9-WvR"/>
                         <outlet property="label" destination="SMz-Ds-cPG" id="aOb-sX-SKG"/>
+                        <outlet property="map" destination="Ro7-pL-W6g" id="URY-hJ-vgG"/>
                         <outlet property="services" destination="MdY-hh-4Uf" id="rMm-MC-m7I"/>
                     </connections>
                 </viewController>

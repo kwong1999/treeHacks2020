@@ -19,6 +19,7 @@ class DisplayViewController: UIViewController {
     var lon :CLLocationDegrees = 0
     
     
+    @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var json: UILabel!
     
