@@ -119,15 +119,40 @@ class DisplayViewController: UIViewController {
             do {
                 let providers = try decoder.decode([Provider].self,from:s)
                 //print(providers)
-                
-                if providers.count == 0 {
+                var arrayChoice = [Provider]()
+                var distChoice = [Double]()
+                /*if providers.count == 0 {
                     self.json.text = "Could not find a match."
                 }
-                else {
-                    self.json.text = providers[0].field_org_city_name
-                    self.services.text = providers[0].field_org_svc_testing
-                    self.clinic.text = providers[0].title_field
+                else {*/
+                    var distance = [(name: Int, value: Double)]()
+                    for count in 0...(providers.count-1){
+                        let coordinate₀ = CLLocation(latitude: self.lat, longitude: self.lon)
+                        let indLat = providers[count].field_org_lat_long.firstIndex(of: ",")!
+                        let pLat = Double(String(providers[count].field_org_lat_long[..<indLat]))
+                        let tempString = String(providers[count].field_org_lat_long[indLat...])
+                        let indLon = tempString.index(tempString.startIndex, offsetBy: 2)
+                        let pLon = Double(String(tempString[indLon...]))
+                        let coordinate₁ = CLLocation(latitude: pLat!, longitude: pLon!)
+                        distance.append((name: count, value: Double(coordinate₀.distance(from: coordinate₁))))
+                        
+                    }
+                distance.sort() { $0.0 < $1.0 }
+                for dist in distance{
+                    if(providers[dist.name].field_org_fee.contains("Free"))
+                    {
+                        arrayChoice.append(providers[dist.name])
+                        distChoice.append(dist.value/1609.0)
+                        print(dist.value/1609.0)
+                    }
                 }
+                
+                
+                    
+                    /*self.json.text = providers[0].field_org_city_name
+                    self.services.text = providers[0].field_org_svc_testing
+                    self.clinic.text = providers[0].title_field*/
+               // }
             } catch {
                 print(error.localizedDescription)
             }
@@ -220,6 +245,7 @@ class DisplayViewController: UIViewController {
                  }
             task.resume()
         }
+            
         
     }
     }

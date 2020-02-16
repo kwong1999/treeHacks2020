@@ -39,7 +39,7 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         var vc = segue.destination as! DisplayViewController
         if(self.option == "")
         {
-            self.option = "Acute HIV Testing"
+            self.option = "Chlamydia Testing"
         }
         vc.finalName = self.option
     }
