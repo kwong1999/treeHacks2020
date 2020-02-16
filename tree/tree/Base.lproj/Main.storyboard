@@ -31,33 +31,31 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="welcome to equis" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qco-my-quy">
-                                <rect key="frame" x="77" y="82" width="221" height="73"/>
-                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="25"/>
+                                <rect key="frame" x="58" y="82" width="258" height="81"/>
+                                <fontDescription key="fontDescription" name="NotoNastaliqUrdu" family="Noto Nastaliq Urdu" pointSize="32"/>
                                 <color key="textColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="equals" translatesAutoresizingMaskIntoConstraints="NO" id="3MC-OL-RiB">
-                                <rect key="frame" x="127" y="200" width="121" height="95"/>
+                                <rect key="frame" x="125" y="171" width="121" height="129"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3MC-OL-RiB" secondAttribute="trailing" constant="127" id="1Oo-Dx-5O3"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3MC-OL-RiB" secondAttribute="trailing" constant="127" id="AKX-4h-OV4"/>
-                            <constraint firstItem="3MC-OL-RiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="Bl6-Tt-XEn"/>
-                            <constraint firstItem="9GJ-CZ-MJ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="Ixz-z1-HJB"/>
-                            <constraint firstItem="3MC-OL-RiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="127" id="N7o-kz-eRC"/>
-                            <constraint firstItem="9GJ-CZ-MJ7" firstAttribute="top" secondItem="3MC-OL-RiB" secondAttribute="bottom" constant="298" id="QTw-Vj-v49"/>
-                            <constraint firstItem="qco-my-quy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="77" id="Ux1-pL-HuZ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="3MC-OL-RiB" secondAttribute="trailing" constant="129" id="0rI-hW-ba7"/>
+                            <constraint firstItem="9GJ-CZ-MJ7" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="129" id="8Jj-oJ-O1s"/>
+                            <constraint firstItem="qco-my-quy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="Ajj-lB-R4W"/>
+                            <constraint firstItem="9GJ-CZ-MJ7" firstAttribute="top" secondItem="3MC-OL-RiB" secondAttribute="bottom" constant="293" id="HjL-E8-Pr5"/>
+                            <constraint firstItem="3MC-OL-RiB" firstAttribute="top" secondItem="qco-my-quy" secondAttribute="bottom" constant="8" id="LVW-uM-TzV"/>
                             <constraint firstAttribute="bottom" secondItem="WI0-Ai-kVH" secondAttribute="bottom" constant="-40" id="W9h-cy-iff"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qco-my-quy" secondAttribute="trailing" constant="77" id="c2Z-Cb-Hzx"/>
                             <constraint firstItem="WI0-Ai-kVH" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="cTE-En-lls"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9GJ-CZ-MJ7" secondAttribute="bottom" constant="44" id="dNf-Z7-CWC"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9GJ-CZ-MJ7" secondAttribute="trailing" constant="129" id="fCK-xO-Dyx"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qco-my-quy" secondAttribute="trailing" constant="59" id="dD2-vT-l97"/>
+                            <constraint firstItem="3MC-OL-RiB" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="125" id="edI-MX-cG3"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="9GJ-CZ-MJ7" secondAttribute="bottom" constant="44" id="gHO-rX-PQz"/>
                             <constraint firstItem="WI0-Ai-kVH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="-40" id="goF-Xo-vzk"/>
-                            <constraint firstItem="qco-my-quy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="iWd-7I-SR1"/>
-                            <constraint firstItem="3MC-OL-RiB" firstAttribute="top" secondItem="qco-my-quy" secondAttribute="bottom" constant="45" id="oNn-LS-PST"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="9GJ-CZ-MJ7" secondAttribute="trailing" constant="129" id="m5K-e0-8Os"/>
+                            <constraint firstItem="qco-my-quy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="82" id="rhm-WG-ViQ"/>
                             <constraint firstItem="WI0-Ai-kVH" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="soB-rU-tGW"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
