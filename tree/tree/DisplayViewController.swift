@@ -27,7 +27,7 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var services: UILabel!
     
     @IBOutlet weak var clinic: UILabel!
-    struct Person: Codable {
+    struct Provider: Codable {
         var field_org_nid: String
         var field_org_id : String
         var title_field : String
@@ -117,11 +117,17 @@ class DisplayViewController: UIViewController {
             let decoder = JSONDecoder()
             
             do {
-                let people = try decoder.decode([Person].self,from:s)
-                //print(people)
-                self.json.text = people[0].field_org_city_name
-                self.services.text = people[0].field_org_svc_testing
-                self.clinic.text = people[0].title_field
+                let providers = try decoder.decode([Provider].self,from:s)
+                //print(providers)
+                
+                if providers.count == 0 {
+                    self.json.text = "Could not find a match."
+                }
+                else {
+                    self.json.text = providers[0].field_org_city_name
+                    self.services.text = providers[0].field_org_svc_testing
+                    self.clinic.text = providers[0].title_field
+                }
             } catch {
                 print(error.localizedDescription)
             }
