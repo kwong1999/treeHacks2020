@@ -19,6 +19,15 @@ class DisplayViewController: UIViewController {
     var lat :CLLocationDegrees = 0
     var lon :CLLocationDegrees = 0
     
+    var phoneNumber1 = ""
+    var phoneNumber2 = ""
+    var phoneNumber3 = ""
+    
+    var web1 = ""
+    var web2 = ""
+    var web3 = ""
+    
+    @IBOutlet weak var whiteView: UIView!
     
     @IBOutlet weak var box1: UIView!
     @IBOutlet weak var box2: UIView!
@@ -28,6 +37,12 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var label2: UILabel!
     @IBOutlet weak var label3: UILabel!
     
+    @IBOutlet weak var call1: UIButton!
+    @IBOutlet weak var call2: UIButton!
+    @IBOutlet weak var call3: UIButton!
+    @IBOutlet weak var website1: UIButton!
+    @IBOutlet weak var website2: UIButton!
+    @IBOutlet weak var website3: UIButton!
     
     @IBOutlet weak var map: MKMapView!
     
@@ -197,16 +212,23 @@ class DisplayViewController: UIViewController {
                             let ind2 = phone.index(phone.startIndex, offsetBy: 15)
                             let phone2 = phone[..<ind2]
                             
+                            let phone2A = phone2.replacingOccurrences(of: "(", with: "")
+                            let phone2B = phone2A.replacingOccurrences(of: ")", with: "")
+                            let phone2C = phone2B.replacingOccurrences(of: "-", with: "")
+                            let phone2D = phone2C.replacingOccurrences(of: " ", with: "")
+                            self.phoneNumber1 = phone2D
+                            
                             let boldText = "\(providers[dist.name].title_field)"
                             let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
                             let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
                             
-                            let normalText = "\nDistance: \(d) miles\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalText = "\nDistance: \(d) miles"
                             let normalString = NSMutableAttributedString(string:normalText)
                             
                             attributedString.append(normalString)
                             self.label1.attributedText = attributedString
                             
+                            self.web1 = "\(providers[dist.name].field_npin_link)"
                             labelCount = 2
                         }
                         else if(labelCount == 2)
@@ -216,16 +238,23 @@ class DisplayViewController: UIViewController {
                             let ind2 = phone.index(phone.startIndex, offsetBy: 15)
                             let phone2 = phone[..<ind2]
                             
+                            let phone2A = phone2.replacingOccurrences(of: "(", with: "")
+                            let phone2B = phone2A.replacingOccurrences(of: ")", with: "")
+                            let phone2C = phone2B.replacingOccurrences(of: "-", with: "")
+                            let phone2D = phone2C.replacingOccurrences(of: " ", with: "")
+                            self.phoneNumber2 = phone2D
+                            
                             let boldText = "\(providers[dist.name].title_field)"
                             let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
                             let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
                             
-                            let normalText = "\nDistance: \(d) miles\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalText = "\nDistance: \(d) miles"
                             let normalString = NSMutableAttributedString(string:normalText)
                             
                             attributedString.append(normalString)
                             self.label2.attributedText = attributedString
                             
+                            self.web2 = "\(providers[dist.name].field_npin_link)"
                             labelCount = 3
                         }
                         else if(labelCount == 3)
@@ -235,16 +264,23 @@ class DisplayViewController: UIViewController {
                             let ind2 = phone.index(phone.startIndex, offsetBy: 15)
                             let phone2 = phone[..<ind2]
                             
+                            let phone2A = phone2.replacingOccurrences(of: "(", with: "")
+                            let phone2B = phone2A.replacingOccurrences(of: ")", with: "")
+                            let phone2C = phone2B.replacingOccurrences(of: "-", with: "")
+                            let phone2D = phone2C.replacingOccurrences(of: " ", with: "")
+                            self.phoneNumber3 = phone2D
+                            
                             let boldText = "\(providers[dist.name].title_field)"
                             let attrs = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13)]
                             let attributedString = NSMutableAttributedString(string:boldText, attributes:attrs)
                             
-                            let normalText = "\nDistance: \(d) miles\nPhone: \(phone2)\nWebsite: \(providers[dist.name].field_npin_link)"
+                            let normalText = "\nDistance: \(d) miles"
                             let normalString = NSMutableAttributedString(string:normalText)
                             
                             attributedString.append(normalString)
                             self.label3.attributedText = attributedString
                             
+                            self.web3 = "\(providers[dist.name].field_npin_link)"
                             labelCount = 4
                             break
                         }
@@ -255,17 +291,31 @@ class DisplayViewController: UIViewController {
                     if(labelCount == 1)
                     {
                         self.label1.text = "Sorry, there are no testing centers in your area."
-                        self.box2.isHidden = true;
-                        self.box3.isHidden = true;
+                        self.box2.isHidden = true
+                        self.box3.isHidden = true
+                        self.label2.text = ""
+                        self.label3.text = ""
+                        self.call1.isHidden = true
+                        self.call2.isHidden = true
+                        self.call3.isHidden = true
+                        self.website1.isHidden = true
+                        self.website2.isHidden = true
+                        self.website3.isHidden = true
                     }
                     else if(labelCount == 2)
                     {
-                        self.box2.isHidden = true;
-                        self.box3.isHidden = true;
+                        self.box2.isHidden = true
+                        self.box3.isHidden = true
+                        self.call2.isHidden = true
+                        self.call3.isHidden = true
+                        self.website2.isHidden = true
+                        self.website3.isHidden = true
                     }
                     else if(labelCount == 3)
                     {
-                        self.box3.isHidden = true;
+                        self.box3.isHidden = true
+                        self.call3.isHidden = true
+                        self.website3.isHidden = true
                     }
 
                 }
@@ -284,6 +334,29 @@ class DisplayViewController: UIViewController {
     var locationManager = CLLocationManager()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        call1.layer.cornerRadius = 5
+        call1.clipsToBounds = true
+        call2.layer.cornerRadius = 5
+        call2.clipsToBounds = true
+        call3.layer.cornerRadius = 5
+        call3.clipsToBounds = true
+        website1.layer.cornerRadius = 5
+        website1.clipsToBounds = true
+        website2.layer.cornerRadius = 5
+        website2.clipsToBounds = true
+        website3.layer.cornerRadius = 5
+        website3.clipsToBounds = true
+        whiteView.layer.cornerRadius = 5;
+        whiteView.layer.masksToBounds = true;
+        
+        box1.layer.cornerRadius = 3
+        box1.clipsToBounds = true
+        box2.layer.cornerRadius = 3
+        box2.clipsToBounds = true
+        box3.layer.cornerRadius = 3
+        box3.clipsToBounds = true
+        
         
         locationManager.requestWhenInUseAuthorization()
         var currentLoc: CLLocation!
@@ -305,7 +378,7 @@ class DisplayViewController: UIViewController {
         DispatchQueue.main.asyncAfter(deadline: .now()+0.5) { //this may be too slow
            // Code you want to be delayed
             startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)&prox[distance]=10000&svc_testing="
-            //print(startUrl)
+            print(startUrl)
             
             if self.finalName == "Chlamydia Testing" {
                 self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated. Tests include a urine test or (for women) a swab from your cervix. For women, yearly screening is recommended.\n\nCommon symptoms: genital pain, pain in the lower abdomen, genital discharge"
@@ -375,7 +448,41 @@ class DisplayViewController: UIViewController {
     }
     }
     
-
+    
+    @IBAction func visitWebsite1(_ sender: Any) {
+        if let url = URL(string: "\(self.web1)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func visitWebsite2(_ sender: Any) {
+        if let url = URL(string: "\(self.web2)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func visitWebsite3(_ sender: Any) {
+        if let url = URL(string: "\(self.web3)") {
+            UIApplication.shared.open(url)
+        }
+    }
+    @IBAction func makeCall1(_ sender: Any) {
+        if let url = URL(string: "tel://\(phoneNumber1)"),
+        UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    
+    @IBAction func makeCall2(_ sender: Any) {
+        if let url = URL(string: "tel://\(phoneNumber2)"),
+        UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
+    @IBAction func makeCall3(_ sender: Any) {
+        if let url = URL(string: "tel://\(phoneNumber3)"),
+        UIApplication.shared.canOpenURL(url) {
+            UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        }
+    }
     /*
     // MARK: - Navigation
 

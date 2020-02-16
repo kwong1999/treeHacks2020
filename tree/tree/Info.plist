@@ -45,5 +45,9 @@
 	<string>Application wants to use your location</string>
 	<key>NSLocationAlwaysUsageDescription</key>
 	<string>Application wants to use your location</string>
+    <key>LSApplicationQueriesSchemes</key>
+    <array>
+            <string>tel</string>
+    </array>
 </dict>
 </plist>

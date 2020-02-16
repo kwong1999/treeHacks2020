@@ -23,6 +23,7 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         option = pickerData[row] as String
     }
     
+    @IBOutlet weak var whiteView: UIView!
     var option = ""
     var pickerData: [String] = [String]()
     @IBOutlet weak var picker: UIPickerView!
@@ -34,6 +35,12 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
         //picker.selectRow(4, inComponent: 0, animated: true)
         
         // Do any additional setup after loading the view.
+        
+        button.layer.cornerRadius = 5
+        button.clipsToBounds = true
+        
+        whiteView.layer.cornerRadius = 5;
+        whiteView.layer.masksToBounds = true;
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         var vc = segue.destination as! DisplayViewController

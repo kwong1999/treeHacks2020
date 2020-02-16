@@ -236,6 +236,7 @@
                     <connections>
                         <outlet property="button" destination="25x-YY-ScL" id="WJI-M5-TDZ"/>
                         <outlet property="picker" destination="tD4-tJ-91D" id="xeR-3J-MUW"/>
+                        <outlet property="whiteView" destination="6tr-9q-bHv" id="ZjO-OQ-Kf0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="akq-Zs-P8V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -276,8 +277,29 @@
                                         <rect key="frame" x="107" y="510" width="138" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wky-oX-quC">
+                                                <rect key="frame" x="17" y="79" width="37" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Call"/>
+                                                <connections>
+                                                    <action selector="makeCall1:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="7Bt-Xi-P05"/>
+                                                    <action selector="makecall1:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="twB-f8-y50"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="utL-nM-yC5">
+                                                <rect key="frame" x="64" y="79" width="57" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Website"/>
+                                                <connections>
+                                                    <action selector="visitWebsite1:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="Q69-ke-HQR"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dj1-oa-Pzx">
-                                                <rect key="frame" x="8" y="8" width="130" height="95"/>
+                                                <rect key="frame" x="13" y="8" width="113" height="68"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
@@ -290,8 +312,28 @@
                                         <rect key="frame" x="28" y="629" width="138" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eFb-DB-BOf">
+                                                <rect key="frame" x="18" y="80" width="37" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Call"/>
+                                                <connections>
+                                                    <action selector="makeCall2:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="keU-Jp-kKe"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZCC-Fo-h86">
+                                                <rect key="frame" x="63" y="80" width="57" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Website"/>
+                                                <connections>
+                                                    <action selector="visitWebsite2:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="udn-tS-B14"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mnk-x9-OtR">
-                                                <rect key="frame" x="8" y="8" width="122" height="95"/>
+                                                <rect key="frame" x="13" y="8" width="112" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
@@ -304,8 +346,26 @@
                                         <rect key="frame" x="174" y="629" width="138" height="111"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ipq-2q-PJZ">
+                                                <rect key="frame" x="18" y="80" width="37" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Call"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUc-J8-EWb">
+                                                <rect key="frame" x="63" y="80" width="57" height="17"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="10"/>
+                                                <state key="normal" title="Website"/>
+                                                <connections>
+                                                    <action selector="makeCall3:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="hBc-zb-rH7"/>
+                                                    <action selector="visitWebsite3:" destination="IXJ-b1-vmr" eventType="touchUpInside" id="Z4A-Cd-Awq"/>
+                                                </connections>
+                                            </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Loading..." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5p-gz-xGA">
-                                                <rect key="frame" x="8" y="8" width="122" height="95"/>
+                                                <rect key="frame" x="12" y="8" width="114" height="70"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <nil key="textColor"/>
@@ -327,12 +387,19 @@
                         <outlet property="box1" destination="wXe-oh-sVG" id="yco-w2-Nep"/>
                         <outlet property="box2" destination="K6b-zt-qBG" id="fH0-IR-2ST"/>
                         <outlet property="box3" destination="dAc-SF-7ez" id="cKQ-va-dot"/>
+                        <outlet property="call1" destination="Wky-oX-quC" id="WAx-ph-AJk"/>
+                        <outlet property="call2" destination="eFb-DB-BOf" id="f20-Tf-Lc5"/>
+                        <outlet property="call3" destination="Ipq-2q-PJZ" id="7lv-IM-zX5"/>
                         <outlet property="info" destination="ZY4-wH-Id4" id="Iw1-s6-iFI"/>
                         <outlet property="label" destination="SMz-Ds-cPG" id="aOb-sX-SKG"/>
                         <outlet property="label1" destination="Dj1-oa-Pzx" id="Spg-ol-fNm"/>
                         <outlet property="label2" destination="mnk-x9-OtR" id="xZ0-bz-pQx"/>
                         <outlet property="label3" destination="d5p-gz-xGA" id="Ztp-Hp-PBb"/>
                         <outlet property="map" destination="Ro7-pL-W6g" id="URY-hJ-vgG"/>
+                        <outlet property="website1" destination="utL-nM-yC5" id="sgQ-vq-5VJ"/>
+                        <outlet property="website2" destination="ZCC-Fo-h86" id="nyn-VZ-T7U"/>
+                        <outlet property="website3" destination="VUc-J8-EWb" id="wOg-Q8-g09"/>
+                        <outlet property="whiteView" destination="94c-Qo-yLO" id="d9d-FH-bsZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uL0-FM-etl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
