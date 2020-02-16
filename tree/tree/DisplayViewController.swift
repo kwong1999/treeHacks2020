@@ -151,11 +151,7 @@ class DisplayViewController: UIViewController {
             startUrl = "https://npin.cdc.gov/api/organization/proximity?prox[origin]=\(self.postalCode)&svc_testing="
             //print(startUrl)
             
-            if self.finalName == "Acute HIV Testing" {
-                self.info.text = "This is the earliest stage of human immunodeficiency virus (HIV), the virus that causes AIDS and attacks immune cells. Early treatment will help make treatment more effective and reduce the risk of infecting others."
-                //NEEDS A URL ADDITION
-            }
-            else if self.finalName == "Chlamydia Testing" {
+            if self.finalName == "Chlamydia Testing" {
                 self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated."
                 startUrl += "Chlamydia%20Testing"
             }
@@ -163,10 +159,7 @@ class DisplayViewController: UIViewController {
                 self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
                 startUrl += "Conventional%20Blood%20HIV%20Testing"
             }
-            else if self.finalName == "Conventional Oral HIV Testing" {
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
-                //NEEDS A URL ADDITION
-            }
+
             else if self.finalName == "Gonorrhea Testing" {
                 self.info.text = "Gonorrhea is a sexually transmitted disease that most commonly affects young men and women between the ages 15-24. It can be spread through unprotected vaginal, anal, or oral sex."
                 startUrl += "Gonorrhea%20Testing"
@@ -183,18 +176,12 @@ class DisplayViewController: UIViewController {
                 self.info.text = "Hepatitis C is a blood-borne liver infection that most often turns into a chronic diagnosis and can lead to many long-term health problems. It is most commonly transmitted by sharing needles."
                 startUrl += "Hepatitis%20C%20Testing"
             }
-            else if self.finalName == "Hepatitis Testing"{
-                self.info.text = "Hepatitis is inflammation of the liver. There are three different types–Hepatitis A, Hepatitis B, and Hepatitis, which differ in how they are transmitted and vary in severity and duration."
-                //NEEDS A URL ADDITION
-            }
+           
             else if self.finalName == "Herpes Testing" {
                 self.info.text = "There are two types of herpes–genital herpes and oral herpes. They can result in cold sores and blisters around the genital area and the mouth, respectively. Most people with herpes exhibit no symptoms or only very mild symptoms."
                 startUrl += "Herpes%20Testing"
             }
-            else if self.finalName == "HIV Testing" {
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
-                //NEEDS A URL ADDITION
-            }
+            
             else if self.finalName == "Rapid Blood HIV Testing"{
                 self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
                 startUrl += "Rapid%20Blood%20HIV%20Testing"
@@ -202,9 +189,6 @@ class DisplayViewController: UIViewController {
             else if self.finalName == "Rapid Oral HIV Testing"{
                 self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
                 startUrl += "Rapid%20Oral%20HIV%20Testing"
-            }
-            else if self.finalName == "STD Testing" {
-                self.info.text = "Sexually transmitted diseases (STDs) can be transmitted during vaginal, anal, and oral sex. Most STDs can easily be treated, but without treatment often lead to other serious health problems."
             }
             else if self.finalName == "Syphilis Testing" {
                 self.info.text = "Syphilis is a sexually transmitted disease spread through direct contact during vaginal, anal, oral sex and can lead to serious health complications if left untreated. There are four different stages (primary, secondary, latent, and tertiary) with different symptoms."

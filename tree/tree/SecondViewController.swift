@@ -28,7 +28,7 @@ class SecondViewController: UIViewController, UIPickerViewDelegate, UIPickerView
     @IBOutlet weak var picker: UIPickerView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        pickerData = ["Acute HIV Testing","Chlamydia Testing","Conventional Blood HIV Testing","Conventional Oral HIV Testing","Gonorrhea Testing","Hepatitis A Testing","Hepatitis B Testing","Hepatitis C Testing","Hepatitis Testing","Herpes Testing","HIV Testing","Rapid Blood HIV Testing","Rapid Oral HIV Testing","STD Testing","Syphilis Testing","TB Testing"]
+        pickerData = ["Chlamydia Testing","Conventional Blood HIV Testing","Gonorrhea Testing","Hepatitis A Testing","Hepatitis B Testing","Hepatitis C Testing","Herpes Testing","Rapid Blood HIV Testing","Rapid Oral HIV Testing","Syphilis Testing","TB Testing"]
         picker.delegate = self
         picker.dataSource = self
         //picker.selectRow(4, inComponent: 0, animated: true)
