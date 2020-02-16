@@ -137,7 +137,7 @@ class DisplayViewController: UIViewController {
                         distance.append((name: count, value: Double(coordinate₀.distance(from: coordinate₁))))
                         
                     }
-                distance.sort() { $0.0 < $1.0 }
+                distance = distance.sorted(by: {$0.0 < $1.0})
                 for dist in distance{
                     if(providers[dist.name].field_org_fee.contains("Free"))
                     {
