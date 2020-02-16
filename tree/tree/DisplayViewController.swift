@@ -97,7 +97,7 @@ class DisplayViewController: UIViewController {
                   
         }
     }
-    let regionRadius: CLLocationDistance = 100000
+    let regionRadius: CLLocationDistance = 50000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
                                                        latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
@@ -153,6 +153,8 @@ class DisplayViewController: UIViewController {
                     var distance = [(name: Int, value: Double)]()
                     var lats = [(name: Int, value: Double)]()
                     var lons = [(name: Int, value: Double)]()
+                if(provider.count != 0)
+                {
                     for count in 0...(providers.count-1){
                         let coordinate₀ = CLLocation(latitude: self.lat, longitude: self.lon)
                         let indLat = providers[count].field_org_lat_long.firstIndex(of: ",")!
@@ -178,6 +180,7 @@ class DisplayViewController: UIViewController {
                         self.map.addAnnotation(annotation)
                     }
                     i = i + 1
+                }
                 }
                 
                 
