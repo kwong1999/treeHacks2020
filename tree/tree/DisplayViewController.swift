@@ -153,7 +153,7 @@ class DisplayViewController: UIViewController {
                     var distance = [(name: Int, value: Double)]()
                     var lats = [(name: Int, value: Double)]()
                     var lons = [(name: Int, value: Double)]()
-                if(provider.count != 0)
+                if(providers.count != 0)
                 {
                     for count in 0...(providers.count-1){
                         let coordinate₀ = CLLocation(latitude: self.lat, longitude: self.lon)
