@@ -97,7 +97,7 @@ class DisplayViewController: UIViewController {
                   
         }
     }
-    let regionRadius: CLLocationDistance = 1000
+    let regionRadius: CLLocationDistance = 100000
     func centerMapOnLocation(location: CLLocation) {
         let coordinateRegion = MKCoordinateRegion.init(center: location.coordinate,
                                                        latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
@@ -119,6 +119,21 @@ class DisplayViewController: UIViewController {
                 })
             }
     }
+    func mapView(_ mapView: MKMapView, viewFor annotation: MKAnnotation) -> MKAnnotationView? {
+        guard annotation is MKPointAnnotation else { return nil }
+        
+        let identifier = "Annotation"
+        var annotationView = mapView.dequeueReusableAnnotationView(withIdentifier: identifier)
+        
+        if annotationView == nil {
+            annotationView = MKPinAnnotationView(annotation: annotation, reuseIdentifier: identifier)
+            annotationView!.canShowCallout = true
+        } else {
+            annotationView!.annotation = annotation
+        }
+        
+        return annotationView
+    }
     
     func changeResponse(s: Data){
         DispatchQueue.main.async {
@@ -136,6 +151,8 @@ class DisplayViewController: UIViewController {
                 }
                 else {*/
                     var distance = [(name: Int, value: Double)]()
+                    var lats = [(name: Int, value: Double)]()
+                    var lons = [(name: Int, value: Double)]()
                     for count in 0...(providers.count-1){
                         let coordinate₀ = CLLocation(latitude: self.lat, longitude: self.lon)
                         let indLat = providers[count].field_org_lat_long.firstIndex(of: ",")!
@@ -145,16 +162,22 @@ class DisplayViewController: UIViewController {
                         let pLon = Double(String(tempString[indLon...]))
                         let coordinate₁ = CLLocation(latitude: pLat!, longitude: pLon!)
                         distance.append((name: count, value: Double(coordinate₀.distance(from: coordinate₁))))
-                        
+                        lats.append((name:count, value: pLat!))
+                        lons.append((name:count, value: pLon!))
                     }
                 distance = distance.sorted(by: {$0.0 < $1.0})
+                var i = 0
                 for dist in distance{
                     if(providers[dist.name].field_org_fee.contains("Free") || providers[dist.name].field_org_fee.contains("Medicaid"))
                     {
                         arrayChoice.append(providers[dist.name])
                         distChoice.append(dist.value/1609.0)
                         //print(dist.value/1609.0)
+                        let annotation = MKPointAnnotation()
+                        annotation.coordinate = CLLocationCoordinate2D(latitude: lats[i].value, longitude: lons[i].value)
+                        self.map.addAnnotation(annotation)
                     }
+                    i = i + 1
                 }
                 
                 
