@@ -20,6 +20,10 @@ class DisplayViewController: UIViewController {
     var lon :CLLocationDegrees = 0
     
     
+    @IBOutlet weak var box1: UIView!
+    @IBOutlet weak var box2: UIView!
+    @IBOutlet weak var box3: UIView!
+    
     @IBOutlet weak var map: MKMapView!
     
     @IBOutlet weak var json: UILabel!
@@ -221,50 +225,50 @@ class DisplayViewController: UIViewController {
             //print(startUrl)
             
             if self.finalName == "Chlamydia Testing" {
-                self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated. Tests include a urine test or (for women) a swab from your cervix. For women, yearly screening is recommended if you are sexually active."
+                self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated. Tests include a urine test or (for women) a swab from your cervix. For women, yearly screening is recommended.\n\nCommon symptoms: genital pain, pain in the lower abdomen, genital discharge"
                 startUrl += "Chlamydia%20Testing"
             }
             else if self.finalName == "Conventional Blood HIV Testing" {
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. Blood is extracted, taken to the lab, and results are given in a few hours to a few days."
+                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. Blood is extracted, taken to the lab, and results are given in a few hours to a few days.\n\nCommon symptoms: rash, fever, chills, headache, fatigue, sore throat, night sweats"
                 startUrl += "Conventional%20Blood%20HIV%20Testing"
             }
 
             else if self.finalName == "Gonorrhea Testing" {
-                self.info.text = "Gonorrhea is a sexually transmitted disease that most commonly affects young men and women between the ages 15-24. It can be spread through unprotected vaginal, anal, or oral sex. Typically, a urine test is performed."
+                self.info.text = "Gonorrhea is a sexually transmitted disease that most commonly affects young men and women between the ages 15-24. It can be spread through unprotected vaginal, anal, or oral sex. Typically, a urine test is performed.\n\nCommon symptoms: frequent urination, sore throat, gential discharge, abdominal pain"
                 startUrl += "Gonorrhea%20Testing"
             }
             else if self.finalName == "Hepatitis A Testing"{
-                self.info.text = "Hepatitis A is a highly contagious liver infection that is contracted by unknowingly ingesting the virus from miniscule amounts of stool of an uninfected person. Unlike Hepatitis B and C, Hepatitis A is usually short-term. Typically, a blood test is performed."
+                self.info.text = "Hepatitis A is a highly contagious liver infection that is contracted by unknowingly ingesting the virus from miniscule amounts of stool of an uninfected person. Unlike Hepatitis B and C, Hepatitis A is usually short-term. Typically, a blood test is performed.\n\nCommon symptoms: fever, fatigue, loss of appetite, nausea, vomiting, abdominal pain"
                 startUrl += "Hepatitis%20A%20Testing"
             }
             else if self.finalName == "Hepatitis B Testing" {
-                self.info.text = "Hepatitis B is a liver infection that can be passed through blood, semen, or other bodily fluids of an infected person. While Hepatitis B is typically short-term, for people with weak immune systems it can become chronic. Typically, a blood test is performed."
+                self.info.text = "Hepatitis B is a liver infection that can be passed through blood, semen, or other bodily fluids of an infected person. While Hepatitis B is typically short-term, for people with weak immune systems it can become chronic. Typically, a blood test is performed.\n\nCommon symptoms: fever, fatigue, loss of appetite, nausea, vomiting, abdominal pain"
                 startUrl += "Hepatitis%20B%20Testing"
             }
             else if self.finalName == "Hepatitis C Testing"{
-                self.info.text = "Hepatitis C is a blood-borne liver infection that most often turns into a chronic diagnosis and can lead to many long-term health problems. It is most commonly transmitted by sharing needles. Typically, a blood test is performed."
+                self.info.text = "Hepatitis C is a blood-borne liver infection that most often turns into a chronic diagnosis and can lead to many long-term health problems. It is most commonly transmitted by sharing needles. Typically, a blood test is performed.\n\nCommon symptoms: fever, fatigue, loss of appetite, nausea, vomiting, abdominal pain"
                 startUrl += "Hepatitis%20C%20Testing"
             }
            
             else if self.finalName == "Herpes Testing" {
-                self.info.text = "There are two types of herpes–genital herpes and oral herpes. They can result in cold sores and blisters around the genital area and the mouth, respectively. Most people with herpes exhibit no symptoms or only very mild symptoms. Tests are done by extracting fluid or cells for cell culture near the infection."
+                self.info.text = "There are two types of herpes–genital herpes and oral herpes. They can result in cold sores and blisters around the genital area and the mouth, respectively. Most people with herpes exhibit no symptoms or only very mild symptoms. Tests are done by extracting fluid or cells for cell culture near the infection.\n\nCommon symptoms: genital pain or itching, small red bumps, tiny white blisters"
                 startUrl += "Herpes%20Testing"
             }
             
             else if self.finalName == "Rapid Blood HIV Testing"{
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. The test is performed with 99% accuracy. It takes 20 minutes and can detect HIV 18-45 days after infected."
+                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. The test is performed with 99% accuracy. It takes 20 minutes and can detect HIV 18-45 days after infected.\n\nCommon symptoms: rash, fever, chills, headache, fatigue, sore throat, night sweats"
                 startUrl += "Rapid%20Blood%20HIV%20Testing"
             }
             else if self.finalName == "Rapid Oral HIV Testing"{
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. Results from this test are given 15-20 minutes after it is taken. This test is not as reliable during the window period, first couple weeks or months, after infected."
+                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections. While there is currently no cure for HIV, with proper treatment it can be managed. Results from this test are given 15-20 minutes after it is taken. This test is not as reliable during the first couple weeks or months after infected.\n\nCommon symptoms: rash, fever, chills, headache, fatigue, sore throat, night sweats"
                 startUrl += "Rapid%20Oral%20HIV%20Testing"
             }
             else if self.finalName == "Syphilis Testing" {
-                self.info.text = "Syphilis is a sexually transmitted disease spread through direct contact during vaginal, anal, oral sex and can lead to serious health complications if left untreated. There are four different stages (primary, secondary, latent, and tertiary) with different symptoms. Typically, this is done via blood test."
+                self.info.text = "Syphilis is a sexually transmitted disease spread through direct contact during vaginal, anal, oral sex and can lead to serious health complications if left untreated. There are four different stages (primary, secondary, latent, and tertiary) with different symptoms. Typically, this is done via blood test.\n\nCommon symptoms: chancre, rash, small bumps, sores, genital warts, itching, fatigue"
                 startUrl += "Syphilis%20Testing"
             }
             else if self.finalName == "TB Testing" {
-                self.info.text = "Tuberculosis (TB) is an infectious disease mainly targeting the lungs, but it can also affect the kidney, spine, and brain. It’s spread through the air in coughs and sneezes. There are two forms–active TB and latent TB. TB is tested via blood test or skin test. Skin test involves injecting a small amount of liquid into your skin and checking for a reaction within a couple days."
+                self.info.text = "Tuberculosis (TB) is an infectious disease mainly targeting the lungs, but it can also affect the kidney, spine, and brain. It’s spread through the air in coughs and sneezes. TB is tested via blood test or skin test. Skin test involves injecting a small amount of liquid into your skin and checking for a reaction within a couple days.\n\nCommon symptoms: cough lasting more than three weeks, chest pain, coughing blood"
                 startUrl += "TB%20Testing"
             }
             
