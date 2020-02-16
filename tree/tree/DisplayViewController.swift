@@ -368,7 +368,10 @@ class DisplayViewController: UIViewController {
             print(lat)
             print(lon)
         }
-        centerMapOnLocation(location: currentLoc)
+        if(currentLoc != nil)
+        {
+            centerMapOnLocation(location: currentLoc)
+        }
         
         
         lookUpCurrentLocation()
