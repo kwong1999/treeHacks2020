@@ -183,50 +183,50 @@ class DisplayViewController: UIViewController {
             //print(startUrl)
             
             if self.finalName == "Chlamydia Testing" {
-                self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated."
+                self.info.text = "Chlamydia is a common sexually transmitted disease that is most detrimental to women. It can permanently damage the female reproductive system and cause pelvic inflammatory disease (PID) if not properly treated. Tests include a urine test or (for women) a swab from your cervix. For women, yearly screening is recommended if you are sexually active."
                 startUrl += "Chlamydia%20Testing"
             }
             else if self.finalName == "Conventional Blood HIV Testing" {
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
+                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. Blood is extracted, taken to the lab, and results are given in a few hours to a few days."
                 startUrl += "Conventional%20Blood%20HIV%20Testing"
             }
 
             else if self.finalName == "Gonorrhea Testing" {
-                self.info.text = "Gonorrhea is a sexually transmitted disease that most commonly affects young men and women between the ages 15-24. It can be spread through unprotected vaginal, anal, or oral sex."
+                self.info.text = "Gonorrhea is a sexually transmitted disease that most commonly affects young men and women between the ages 15-24. It can be spread through unprotected vaginal, anal, or oral sex. Typically, a urine test is performed."
                 startUrl += "Gonorrhea%20Testing"
             }
             else if self.finalName == "Hepatitis A Testing"{
-                self.info.text = "Hepatitis A is a highly contagious liver infection that is contracted by unknowingly ingesting the virus from miniscule amounts of stool of an uninfected person. Unlike Hepatitis B and C, Hepatitis A is usually short-term."
+                self.info.text = "Hepatitis A is a highly contagious liver infection that is contracted by unknowingly ingesting the virus from miniscule amounts of stool of an uninfected person. Unlike Hepatitis B and C, Hepatitis A is usually short-term. Typically, a blood test is performed."
                 startUrl += "Hepatitis%20A%20Testing"
             }
             else if self.finalName == "Hepatitis B Testing" {
-                self.info.text = "Hepatitis B is a liver infection that can be passed through blood, semen, or other bodily fluids of an infected person. While Hepatitis B is typically short-term, for people with weak immune systems it can become chronic."
+                self.info.text = "Hepatitis B is a liver infection that can be passed through blood, semen, or other bodily fluids of an infected person. While Hepatitis B is typically short-term, for people with weak immune systems it can become chronic. Typically, a blood test is performed."
                 startUrl += "Hepatitis%20B%20Testing"
             }
             else if self.finalName == "Hepatitis C Testing"{
-                self.info.text = "Hepatitis C is a blood-borne liver infection that most often turns into a chronic diagnosis and can lead to many long-term health problems. It is most commonly transmitted by sharing needles."
+                self.info.text = "Hepatitis C is a blood-borne liver infection that most often turns into a chronic diagnosis and can lead to many long-term health problems. It is most commonly transmitted by sharing needles. Typically, a blood test is performed."
                 startUrl += "Hepatitis%20C%20Testing"
             }
            
             else if self.finalName == "Herpes Testing" {
-                self.info.text = "There are two types of herpes–genital herpes and oral herpes. They can result in cold sores and blisters around the genital area and the mouth, respectively. Most people with herpes exhibit no symptoms or only very mild symptoms."
+                self.info.text = "There are two types of herpes–genital herpes and oral herpes. They can result in cold sores and blisters around the genital area and the mouth, respectively. Most people with herpes exhibit no symptoms or only very mild symptoms. Tests are done by extracting fluid or cells for cell culture near the infection."
                 startUrl += "Herpes%20Testing"
             }
             
             else if self.finalName == "Rapid Blood HIV Testing"{
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
+                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. The test is performed with 99% accuracy. It takes 20 minutes and can detect HIV 18-45 days after infected."
                 startUrl += "Rapid%20Blood%20HIV%20Testing"
             }
             else if self.finalName == "Rapid Oral HIV Testing"{
-                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed."
+                self.info.text = "Human immunodeficiency virus (HIV) targets healthy T cells in the body, leaving the body susceptible to infections and cancer. While there is currently no cure for HIV, with proper treatment it can be managed. Results from this test are given 15-20 minutes after it is taken. This test is not as reliable during the window period, first couple weeks or months, after infected."
                 startUrl += "Rapid%20Oral%20HIV%20Testing"
             }
             else if self.finalName == "Syphilis Testing" {
-                self.info.text = "Syphilis is a sexually transmitted disease spread through direct contact during vaginal, anal, oral sex and can lead to serious health complications if left untreated. There are four different stages (primary, secondary, latent, and tertiary) with different symptoms."
+                self.info.text = "Syphilis is a sexually transmitted disease spread through direct contact during vaginal, anal, oral sex and can lead to serious health complications if left untreated. There are four different stages (primary, secondary, latent, and tertiary) with different symptoms. Typically, this is done via blood test."
                 startUrl += "Syphilis%20Testing"
             }
             else if self.finalName == "TB Testing" {
-                self.info.text = "Tuberculosis (TB) is an infectious disease mainly targeting the lungs, but it can also affect the kidney, spine, and brain. It’s spread through the air in coughs and sneezes. There are two forms–active TB and latent TB."
+                self.info.text = "Tuberculosis (TB) is an infectious disease mainly targeting the lungs, but it can also affect the kidney, spine, and brain. It’s spread through the air in coughs and sneezes. There are two forms–active TB and latent TB. TB is tested via blood test or skin test. Skin test involves injecting a small amount of liquid into your skin and checking for a reaction within a couple days."
                 startUrl += "TB%20Testing"
             }
             
