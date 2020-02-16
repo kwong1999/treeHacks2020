@@ -40,6 +40,7 @@ class DisplayViewController: UIViewController {
     @IBOutlet weak var call1: UIButton!
     @IBOutlet weak var call2: UIButton!
     @IBOutlet weak var call3: UIButton!
+    
     @IBOutlet weak var website1: UIButton!
     @IBOutlet weak var website2: UIButton!
     @IBOutlet weak var website3: UIButton!
@@ -467,6 +468,7 @@ class DisplayViewController: UIViewController {
             UIApplication.shared.open(url)
         }
     }
+
     @IBAction func makeCall1(_ sender: Any) {
         if let url = URL(string: "tel://\(phoneNumber1)"),
         UIApplication.shared.canOpenURL(url) {
@@ -480,12 +482,20 @@ class DisplayViewController: UIViewController {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+
     @IBAction func makeCall3(_ sender: Any) {
         if let url = URL(string: "tel://\(phoneNumber3)"),
         UIApplication.shared.canOpenURL(url) {
             UIApplication.shared.open(url, options: [:], completionHandler: nil)
         }
     }
+    
+    
+    
+    
+    
+    
+    
     /*
     // MARK: - Navigation
 
